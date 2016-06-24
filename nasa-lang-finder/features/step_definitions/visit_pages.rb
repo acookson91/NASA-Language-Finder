@@ -13,3 +13,11 @@ end
 Then(/^I should see repo description$/) do
   expect(page).to have_content("Description: The API documentation for several NASA APIs.")
 end
+
+When(/^I click (\d+)A$/) do |arg1|
+  click_link(arg1 + 'A')
+end
+
+Then(/^I should see repo title$/) do
+  expect(page).to have_content('Repo 39A Summary')
+end

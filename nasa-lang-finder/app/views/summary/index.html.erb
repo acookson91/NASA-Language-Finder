@@ -1,6 +1,11 @@
 <h1> NASA Repo Summary </h1>
-
-<% @repos_info.each do |info| %>
-  Repo Name: <%= info[:name] %>
-  Description: <%= info[:description] %>
-<% end%>
+<div id='repo-info'>
+  <% @repos_info.each do |info| %>
+    <div id='repo-name'>
+      Repo Name: <%= info[:name] %>
+    </div>
+    <div id='repo-description'>
+      Description: <%= info[:description] %>
+    </div>
+  <% end%>
+</div>
