@@ -4,3 +4,4 @@ Feature: Visit Summary page
 Scenario: Visit the Summary page
   Given I am on the home page
   Then I should see Summary Title
+  Then I should see repo title 39A
