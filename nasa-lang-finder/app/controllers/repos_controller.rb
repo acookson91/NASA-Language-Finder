@@ -5,18 +5,27 @@ class ReposController < ApplicationController
     @repo_data =  get_repo_data(response.parsed_response)
   end
 
+  private
+
   def get_repo_data(response)
     [ {repo_name: params[:repo_name] ,languages: format_data(response) }]
   end
 
   def format_data(lang_response)
-    total = lang_response.values.inject(&:+)
+    total = lang_total(lang_response)
     lang = []
-    lang_response.each do |language,amount|
-      lang_percentage = (amount.to_f / total.to_f * 100).round(2)
-      lang << {name:language, percentage: lang_percentage}
+    lang_response.inject([]) do |lang,language,amount|
+      lang << {name:language, percentage: lang_percentage(amount,total)}
     end
-    return lang
+    lang
+  end
+
+  def lang_total(lang_response)
+    lang_response.values.inject(&:+)
+  end
+
+  def lang_percentage(amount,total)
+    (amount.to_f / total.to_f * 100).round(2)
   end
 
 end
