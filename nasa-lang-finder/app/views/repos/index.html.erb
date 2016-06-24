@@ -1,1 +1,6 @@
 Repo <%= params[:repo_name]%> Summary
+
+
+<% @repo_data.each do |repo| %>
+  <%= repo[:languages] %>
+<% end %>
