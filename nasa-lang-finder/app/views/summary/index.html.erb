@@ -1,5 +1,6 @@
 <h1> NASA Repo Summary </h1>
 
-<% @names.each do |name| %>
-  Repo Name: <%= name %>
+<% @repos_info.each do |info| %>
+  Repo Name: <%= info[:name] %>
+  Description: <%= info[:description] %>
 <% end%>

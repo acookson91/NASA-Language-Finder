@@ -11,5 +11,5 @@ Then(/^I should see repo title (\d+)A$/) do |arg1|
 end
 
 Then(/^I should see repo description$/) do
-  expect(page).to have_content("The API documentation for several NASA APIs.")
+  expect(page).to have_content("Description: The API documentation for several NASA APIs.")
 end
