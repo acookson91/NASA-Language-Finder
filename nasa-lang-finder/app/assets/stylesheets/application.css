@@ -14,5 +14,15 @@
  *= require_self
  */
 body {
+
   font-family: arial;
+  width: 600px;
+  margin: 0 auto;
+}
+
+#repo-info {
+  position: relative;
+  width: 250px;
+  float: left;
+  padding: 10px;
 }
