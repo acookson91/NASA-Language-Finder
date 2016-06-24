@@ -9,3 +9,7 @@ end
 Then(/^I should see repo title (\d+)A$/) do |arg1|
   expect(page).to have_content("Repo Name: " + arg1 + "A")
 end
+
+Then(/^I should see repo description$/) do
+  expect(page).to have_content("The API documentation for several NASA APIs.")
+end
