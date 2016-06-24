@@ -2,6 +2,7 @@
 <div id='repo-info'>
   <% @repos_info.each do |info| %>
     <div id='repo-name'>
+      <%= link_to info[:name], repos_path(repo_name: info[:name]) %>
       Repo Name: <%= info[:name] %>
     </div>
     <div id='repo-description'>
