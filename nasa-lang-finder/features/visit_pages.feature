@@ -15,3 +15,4 @@ Scenario: See Repo details
     When I click 39A
     Then I should see repo title
     Then I should see languages used
+    Then I should see language percentage

@@ -26,3 +26,7 @@ Then(/^I should see languages used$/) do
   expect(page).to have_content('Repo 39A Summary')
   expect(page).to have_content('JavaScript')
 end
+
+Then(/^I should see language percentage$/) do
+  expect(page).to have_content('JavaScript: 36%')
+end
