@@ -1,9 +1,12 @@
-Repo <%= params[:repo_name]%> Summary
+<body>
+<h1>Repo <%= params[:repo_name]%> Summary</h1>
 
 <% @repo_data.each do |repo| %>
   <% repo[:languages].each do |lang|%>
-  <%= lang[:name] %>: <%= lang[:percentage] %>%
+    <p><%= lang[:name] %></p>
+    <div style="height:35px;background-color:#FF5733; width-min: 10%;width:<%= lang[:percentage] %>% ; border-style: none">
+      <%= lang[:percentage] %>%
     </div>
   <% end %>
-
 <% end %>
+</body>

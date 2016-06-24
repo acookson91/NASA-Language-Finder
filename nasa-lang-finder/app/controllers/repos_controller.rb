@@ -14,7 +14,7 @@ class ReposController < ApplicationController
   def format_data(lang_response)
     total = lang_total(lang_response)
     lang = []
-    lang_response.inject([]) do |lang,language,amount|
+    lang_response.each do |language,amount|
       lang << {name:language, percentage: lang_percentage(amount,total)}
     end
     lang

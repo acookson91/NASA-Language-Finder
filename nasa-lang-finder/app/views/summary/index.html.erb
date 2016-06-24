@@ -1,12 +1,17 @@
-<h1> NASA Repo Summary </h1>
-<div id='repo-info'>
-  <% @repos_info.each do |info| %>
-    <div id='repo-name'>
-      <%= link_to info[:name], repos_path(repo_name: info[:name]) %>
-      Repo Name: <%= info[:name] %>
-    </div>
-    <div id='repo-description'>
-      Description: <%= info[:description] %>
-    </div>
-  <% end%>
-</div>
+<body>
+  <h1> NASA Repo Summary </h1>
+  <div id='repo-info'>
+    <% @repos_info.each do |info| %>
+      <div id='repo-name'>
+        <p><%= link_to info[:name], repos_path(repo_name: info[:name]) %></p>
+      </div>
+      <div id='repo-description'>
+        <% if info[:description].empty? %>
+          <p>Description: None Available</p>
+        <% else %>
+          <p>Description: <%= info[:description] %></p>
+        <% end %>
+      </div>
+    <% end%>
+  </div>
+</body>
