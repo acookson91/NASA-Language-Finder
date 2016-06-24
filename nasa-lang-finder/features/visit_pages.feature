@@ -14,3 +14,4 @@ Scenario: See Repo details
     Given I am on the home page
     When I click 39A
     Then I should see repo title
+    Then I should see languages used

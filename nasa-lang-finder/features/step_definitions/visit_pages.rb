@@ -21,3 +21,8 @@ end
 Then(/^I should see repo title$/) do
   expect(page).to have_content('Repo 39A Summary')
 end
+
+Then(/^I should see languages used$/) do
+  expect(page).to have_content('Repo 39A Summary')
+  expect(page).to have_content('JavaScript')
+end
