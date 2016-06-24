@@ -28,5 +28,5 @@ Then(/^I should see languages used$/) do
 end
 
 Then(/^I should see language percentage$/) do
-  expect(page).to have_content('JavaScript: 36%')
+  expect(page).to have_content('JavaScript: 45.28%')
 end
