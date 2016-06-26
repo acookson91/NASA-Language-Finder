@@ -1,6 +1,8 @@
 <body>
 <h1>Repo <%= params[:repo_name]%> Summary</h1>
-
+<% flash.each do |message_type,message| %>
+  <div class="alert alert-<%= message_type %>"><%= message %> </div>
+<% end%>
 <% @repo_data.each do |repo| %>
   <% repo[:languages].each do |lang|%>
     <p><%= lang[:name] %></p>

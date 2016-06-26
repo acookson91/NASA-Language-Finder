@@ -42,7 +42,7 @@ When(/^I click Autodoc$/) do
 end
 
 Then(/^I should see repo title Autodoc$/) do
-  expect(page).to have_content('Repo Autodoc Summary')
+  expect(page).to have_content('Repo autodoc Summary')
 end
 
 Then(/^I should see the repo empty$/) do
