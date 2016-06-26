@@ -1,5 +1,7 @@
 Given(/^I am on the home page$/) do
-  visit root_path
+  VCR.use_cassette('github-repos') do
+    visit root_path
+  end
 end
 
 Then(/^I should see Summary Title$/) do
@@ -7,7 +9,7 @@ Then(/^I should see Summary Title$/) do
 end
 
 Then(/^I should see repo title (\d+)A$/) do |arg1|
-  expect(page).to have_content("Repo Name: " + arg1 + "A")
+  expect(page).to have_content(arg1 + "a")
 end
 
 Then(/^I should see repo description$/) do
@@ -15,7 +17,9 @@ Then(/^I should see repo description$/) do
 end
 
 When(/^I click (\d+)A$/) do |arg1|
-  click_link(arg1 + 'A')
+  VCR.use_cassette('github-repo-langs') do
+    click_link(arg1 + 'a')
+  end
 end
 
 Then(/^I should see repo title$/) do
