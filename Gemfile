@@ -29,7 +29,7 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
   gem 'httparty'
-  gem 'fakeweb'
+  gem 'webmock'
 end
 
 group :test do
