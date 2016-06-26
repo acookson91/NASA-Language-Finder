@@ -34,3 +34,17 @@ end
 Then(/^I should see language percentage$/) do
   expect(page).to have_content('JavaScript 45.28%')
 end
+
+When(/^I click Autodoc$/) do
+  VCR.use_cassette('empty-github-repo-lang') do
+    click_link('Autodoc')
+  end
+end
+
+Then(/^I should see repo title Autodoc$/) do
+  expect(page).to have_content('Repo Autodoc Summary')
+end
+
+Then(/^I should see the repo empty$/) do
+  expect(page).to have_content("This Nasa Repo contains no code")
+end

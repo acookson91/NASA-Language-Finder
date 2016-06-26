@@ -16,3 +16,9 @@ Scenario: See Repo details
     Then I should see repo title
     Then I should see languages used
     Then I should see language percentage
+
+  Scenario: Click repo link with not language
+    Given I am on the home page
+    When I click Autodoc
+    Then I should see repo title Autodoc
+    Then I should see the repo empty
