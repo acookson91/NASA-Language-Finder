@@ -4,6 +4,7 @@ Feature: Visit Summary page
 Scenario: Visit the Summary page
   Given I am on the home page
   Then I should see Summary Title
+  Then I should see successful connection 
 
 Scenario: See Repo details
   Given I am on the home page

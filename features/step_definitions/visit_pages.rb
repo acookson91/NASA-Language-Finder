@@ -8,6 +8,10 @@ Then(/^I should see Summary Title$/) do
   expect(page).to have_content('NASA Repo Summary')
 end
 
+Then(/^I should see successful connection$/) do
+  expect(page).to have_content("Successfully connected to NASA Github")
+end
+
 Then(/^I should see repo title (\d+)A$/) do |arg1|
   expect(page).to have_content(arg1 + "a")
 end
