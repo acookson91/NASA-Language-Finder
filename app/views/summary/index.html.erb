@@ -1,5 +1,8 @@
 <body>
   <h1> NASA Repo Summary </h1>
+  <% flash.each do |message_type,message| %>
+    <div class="alert alert-<%= message_type %>"><%= message %> </div>
+  <% end%>
   <div id='repos-info'>
     <% @repos_info.each do |info| %>
       <div id='repo-info'>
