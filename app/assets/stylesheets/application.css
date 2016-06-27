@@ -13,16 +13,107 @@
  *= require_tree .
  *= require_self
  */
-body {
 
-  font-family: arial;
-  width: 600px;
-  margin: 0 auto;
+a {
+  text-decoration: none;
 }
 
-#repo-info {
+body {
+  margin: 0;
+}
+
+#wrapper {
+  font-family: arial;
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+header {
+  background-color: #0065B2;
+  height: 60px;
+}
+
+#logo {
+  text-align: center;
+  margin: 0;
+}
+
+#logo img {
+  height: 70px;
+}
+
+.alert {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 12px;
+}
+
+#repos-info .alert.alert-success{
+  color: #4EB26E;
+}
+
+.alert.alert-danger{
+  color: #FF625E;
+}
+
+#repo-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#repo-list li {
+  float: left;
+  width: 40%;
+  margin: 2.5%;
+  background-color: #f2f2f2;
+  border-radius: 25px;
+  padding: 5px;
+  text-align: center;
+  font-size: 13px;
+}
+
+#repo-list li a {
+color: #0065B2;
+font-weight: bold;
+}
+
+#repo-list li a:hover {
+color: #FFF;
+font-weight: bold;
+}
+
+h1 {
+  padding: 20px;
+  font-size: 15px;
+  text-align: center;
+}
+
+#chart {
+  font-size: 12px;
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+.bar {
+  height:35px;
+  background-color:#fc2c0f;
+  border-style: none;
+  padding-top: 23px;
+  padding-left: 10px;
+}
+
+.percentage-text {
+  font-weight: bold;
+}
+
+
+
+/*#repo-info {
   position: relative;
   width: 250px;
   float: left;
   padding: 10px;
-}
+}*/

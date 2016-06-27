@@ -1,24 +1,26 @@
-<body>
-  <h1> NASA Repo Summary </h1>
-  <% flash.each do |message_type,message| %>
-    <div class="alert alert-<%= message_type %>"><%= message %> </div>
-  <% end%>
+<div id='wrapper'>
   <div id='repos-info'>
-    <% @repos_info.each do |info| %>
-      <div id='repo-info'>
-        <div id='repo-name'>
-          <p><%= link_to info[:name].capitalize, repos_path(repo_name: info[:name]) %></p>
-        </div>
-        <div id='repo-description'>
-          <% if info[:description].empty? %>
-            <p>Description:
-               None Available</p>
-          <% else %>
-            <p>Description:
-               <%= info[:description] %></p>
-          <% end %>
+    <h1> NASA Repo Summary </h1>
+    <% flash.each do |message_type,message| %>
+      <div class="alert alert-<%= message_type %>"><%= message %> </div>
+    <% end%>
+    <ul id='repo-list'>
+      <% @repos_info.each do |info| %>
+        <li id='repo-info'>
+          <div id='repo-name'>
+            <p><%= link_to info[:name].capitalize, repos_path(repo_name: info[:name]) %></p>
           </div>
-        </div>
-      <% end%>
+          <div id='repo-description'>
+            <% if info[:description].empty? %>
+              <p>Description:
+                 None Available</p>
+            <% else %>
+              <p>Description:
+                 <%= info[:description] %></p>
+            <% end %>
+            </div>
+          </li>
+        <% end%>
+      </ul>
   </div>
-</body>
+</div>
