@@ -35,6 +35,17 @@ export CLIENT_ID=YOUR_ID_HERE
 export CLIENT_SECRET=YOUR_SECRET_HERE
 ```
 
+##Screenshots
+
+**Repositories Page**
+
+<img src="http://i.imgur.com/5pxJjcU.jpg"  width="600" >
+
+**Repository Language Page**
+
+<img src="http://i.imgur.com/6qfDXIJ.jpg"  width="600" >
+
+
 ## Technologies used
 
 I used Rails with Cucumber for testing, Webmock and VCR to mock API calls in feature tests and HTTParty for making API requests.
