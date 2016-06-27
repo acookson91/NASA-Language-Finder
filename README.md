@@ -1,6 +1,6 @@
 # NASA Language Finder
 
-**Task to build interactive page that shows the languages NASA uses in each of there repos.**
+**Task to build interactive page that shows the languages NASA uses in their repositories.**
 
 ## Installation Instructions
 
@@ -41,23 +41,21 @@ I used Rails with Cucumber for testing, Webmock and VCR to mock API calls in fea
 
 ## Features
 
-A 2 page application that shows all the NASA repositories on the first page with descriptions. Click on the repositories name to see the language details in percentage.
+A 2 page application that shows NASA repositories on the first page with descriptions. Click on the repositories name to see the language details in percentage.
 
 ## Design approach and Challenges
 
-I started by creating 2 spikes one to access the Github API with HTTParty, then in addition to this I created 3 tests in cucumber to get an understanding in how to use it for testing.
+I started by creating 2 spikes. One to access the Github API with HTTParty, then in addition to this I created 3 tests in cucumber to get an understanding in how to use it for testing.
 
-Once I'd used cucumber, I felt confident I could use it for feature testing this website using behaviour driven development. I didn't know how to mock API calls. I knew this was important as NASA could update there repositories, meaning feature tests could failing as information may not match my test specs.
+Once I'd used cucumber, I felt confident I could use it for feature testing this website using behaviour driven development. I didn't know how to mock API calls for cucumber but understood this was important as NASA could update there repositories, causing feature tests to fail as information may not match my test specs.
 
-To avoid this I used VCR with Webmock to record the first API call. This would then be used in testing instead of the real API call. Understanding that my feature tests would not pick up on changes to structure of the github API this could be a problem, but from my understanding Github use API versioning meaning if they do amend the structure they will change the version, leaving our API structure unaffected.
+To avoid this I used VCR with Webmock to record the first API calls. This would then be used in testing instead of the real API call. Understanding that my feature tests would not pick up on changes to structure of the github API this could be a problem, but from my understanding Github use API versioning meaning if they do amend the structure they will change the version, leaving our API structure unaffected.
 
-I would have liked to create webhooks from the NASA's repositories, to store and update information as NASA updated or added new repositories. This would keep the app quick having information posted straight to the database, yet this didn't work as only the owner of the repository can set up a webhook.
+I would have liked to create webhooks from the NASA's repositories, to store and update information as NASA updated or added new repositories. This would keep the app quick having information posted straight to the database, yet this wasn't possible as only the owner of the repository can set up a webhook.
 
-Originally, I wanted to show the repository name and language details on just one page but as I'm making a number of requests each time the homepage is loaded, it would result in slow page load. This is because the app would have to grab each of the repos names, visit the language URL and return the data. Doing this not only meant slow page load but also over 30 API requests on each load meaning API request limits could be reached easily.
+Originally, I wanted to show the repository name and language details on just one page but as I'm making a number of requests each time the homepage is loaded, it would result in slow page load. This was caused by the app grabbing each of the repos names, visit the language URL and return the data. Doing this not only meant slow page load but also over 20 API requests on each load meaning API request limits could be reached easily.
 
-To avoid this I decided to first grab only the repositories names and descriptions, which meant quick page load as this made one API request. Then when the user wants to see the language details of a certain repository, it would one API call to retrieve the languages for that exact repository.  
-
-
+To avoid this I decided to first grab only the repositories names and descriptions, which meant quick page load making one API request. When the user wants to see the language details of a certain repository, it would one API call to retrieve the languages for that exact repository.  
 
 ## Future developments and improvement
 
