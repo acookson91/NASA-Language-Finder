@@ -18,7 +18,7 @@ Run the following command.
 rails s
 ```
 
-** GitHub has a limited amount of requests per IP address **
+**GitHub has a limited amount of requests per IP address**
 
 To resolved this register this app [here](https://github.com/settings/developers).
 
